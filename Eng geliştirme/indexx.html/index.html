@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" , initial-scale=1.0"/>
+        <title> Günün Kelimesi </title>
+        <style>
+            body{
+                font-family:sans-serif;
+                background-color:#f3f3f3 ;
+                text-align: center;
+                padding: 40px;
+            }
+            .card{
+                background-color:white ;
+                padding: 30px;
+                border-radius: 10px;
+                display:inline-block;
+                box-shadow:  0 2px 8px rgba(0,0,0,0.1);
+            
+
+            }
+            button{
+                padding: 10px 20px;
+                margin-top: 15px;
+                background: #4CAF50;
+                color:white;
+                border:none;
+                border-radius:8px;
+                cursor: pointer;
+
+
+            }
+            button:hover{
+                background:#45a049 ;
+
+            }
+
+
+            </style>
+    </head>
+</body>
+<div class="card">
+    <h1>Günün Kelimesi</h1>
+    <p><strong id="english">nationalty</strong>-<span id="turkish">millet</span></p>
+    <button onclick="speak()">Oku</button>
+</div>
+
+<script>
+    function speak(){
+        const word=document.getElementById('english').textContent;
+        const utterance=new SpeechSynthesisUtterance(word);
+        utterance.lang="eng-US";
+        utterance.rate=0.5;
+        speechSynthesis.speak(utterance);
+    }
+</script>
+</body>
+</html>
